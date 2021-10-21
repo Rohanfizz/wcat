@@ -24,18 +24,25 @@ if(options.length > 0 ){          // input[0] is not a path
         }
         if(n && b){
             console.log("Please enter a valid command or type\nwcat help\nfor list of all commands.");
-        }else if(n && s){
-
-        }else if(b && s){
-
+        }else if((n && s) || (b && s)){
+            for(let i in paths){
+                let p = paths[i];
+                displayContent.s(p,true);
+            }
         }else if(n){
-
+            for(let i in paths){
+                let p = paths[i];
+                displayContent.nb(p,true);
+            }
         }else if(b){
-
+            for(let i in paths){
+                let p = paths[i];
+                displayContent.nb(p,false);
+            }
         }else if(s){
             for(let i in paths){
                 let p = paths[i];
-                displayContent.s(p);
+                displayContent.s(p,false);
             }
         }
     }
