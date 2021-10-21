@@ -1,0 +1,22 @@
+{
+  "name": "wcat",
+  "version": "1.0.0",
+  "description": "This commands helps copy content of multiple files in one file and adds line numbers",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rohanfizz/wcat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rohanfizz/wcat/issues"
+  },
+  "homepage": "https://github.com/Rohanfizz/wcat#readme",
+  "bin": {
+    "wcat": "script.js"
+  }
+}
