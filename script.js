@@ -4,15 +4,42 @@ let displayContent = require('./commands/displayContent');
 
 let input = process.argv.slice(2);
 
+let options = [],paths = [];
+for(let i = 0;i<input.length;i++){
+    if(input[i][0] == '-') options.push(input[i]);
+    else paths.push(input[i]);
+}
 
-if(input[0] === path.basename(input[0]) ){          // input[0] is not a path
-    if(input[1] === path.basename(input[1])){       // input [1] is also not a path
-        // two commands, one will obvio be -s, whats the other?
+// console.log(options); console.log(paths);
 
+if(options.length > 0 ){          // input[0] is not a path
+    let s = false,n = false,b = false;
+    if(options.length > 2 || options[0] == options[1]){
+        console.log("Please enter a valid command or type\nwcat help\nfor list of all commands.");
     }else{
-        // which command?
+        for(let i = 0;i<options.length;i++){
+            if(options[i] == '-s') s = true;
+            else if(options[i] == '-n') n = true;
+            else if(options[i] == '-b') b = true;
+        }
+        if(n && b){
+            console.log("Please enter a valid command or type\nwcat help\nfor list of all commands.");
+        }else if(n && s){
 
+        }else if(b && s){
+
+        }else if(n){
+
+        }else if(b){
+
+        }else if(s){
+            for(let i in paths){
+                let p = paths[i];
+                displayContent.s(p);
+            }
+        }
     }
+    
 }else{
     // no commands, we only have file paths
     for(let i in input){
