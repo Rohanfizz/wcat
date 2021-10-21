@@ -1,0 +1,3 @@
+I am content of f1
+
+I am content after endline in f1
